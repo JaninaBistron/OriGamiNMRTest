@@ -51,15 +51,15 @@ for a given range of thresholds (for details run `Run.Rmd`).
    ```
 4. Open `Run.Rmd` and run it by clicking on the "Run document" button. A shiny markdown file will be generated.
 
-## Conduct OriGami NMR Test for another location
+## Conduct OriGami NMR Test for your own location
 
-If you are interested in developing OriGami NMR Test for your location or your target group of interest, you have to proceed as follows:
+If you are interested in developing OriGami NMR Test for your location and/or another target group of interest (e.g. another age group), you have to proceed as follows:
 
-1. Install OriGami on your mobile devices (see https://origami.ifgi.de for further instructions). Information on the devices can be found in `Run.Rmd`, chapter 2. 
+1. Install OriGami on your mobile devices (see [OriGami-Website](https://origami.ifgi.de) for further instructions). Information on the devices can be found in `Run.Rmd`, chapter 2. 
 
 2. Create an OriGami account and contact us for getting the "scientist" user role. This role gives you access to your data.
 
-3. Create a game in OriGami with the structure described in `Run.Rm`, chapter 2. `Run.Rmd` is a test manual for using OriGami NMR Test to measure NMR competencies.
+3. Create a game in OriGami with the structure described in `Run.Rmd`, chapter 2. `Run.Rmd` is a test manual for using OriGami NMR Test to measure NMR competencies.
 
 4. Conduct the test. Use numbers for your participants instead of real names! _Note: A mobile Internet connection is needed for conducting the test (SIM card). However, if the Internet connection breaks (due to the bad Internet signal in park areas), it is nevertheless possible to continue playing the game started. The data won't be uploaded to the server then, but this can be fixed by uploading it later (via pressing the cloud-button in the evaluation mode of OriGami)._
 
@@ -69,7 +69,11 @@ If you are interested in developing OriGami NMR Test for your location or your t
 
 - Create a data.frame with: `logfile <- fromJSON(...)`
 
-- Reduce your data to the following columns: `waypoints` (data.frame), `events` (data.frame), `players` (numeric), `name` (character), `start` (POSIXct), `end` (POSIXct)
+- Reduce your data to the following columns: `waypoints` (data.frame), `events` (data.frame), `players` (numeric), `name` (character), `start` (POSIXct), `end` (POSIXct) and delete unneeded columns:
+
+```r
+logfile <- select (logfile, -answers, -device, -`__v`, -updatedAt, -createdAt, -game, -playersCount, -`_id`)
+```
 
 - Format the timestamps (see columns: `end`, `start`, `waypoints.timestamp` and `events.timestamp`) as follows:
 
@@ -78,7 +82,7 @@ timestamp <- as.POSIXct(timestamp, "%Y-%m-%dT%H:%M:%S", tz = "UTC")
 logfile$start <- lubridate::with_tz(logfile$start, "MET")
 ```
 
-- Save your resulting data als `logfile.Rda` and replace the logfile in the `data/custom` folder.
+- Save your resulting data as `logfile.Rda` and replace the logfile in the `data/custom` folder.
 
 7. Open `Custom.Rmd` in R Studio and run the file. An R-Markdown file will be generated. You will get information on your test items as well as on the test reliability.
 
