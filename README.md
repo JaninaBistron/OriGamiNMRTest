@@ -47,7 +47,8 @@ for a given range of thresholds (for details run `Run.Rmd`).
    install.packages("leaflet") +
    install.packages("leaflet.extras") +
    install.packages("jsonlite") +
-   install.packages("moments")
+   install.packages("moments") + 
+   install.packages("DescTools")
    ```
 4. Open `Run.Rmd` and run it by clicking on the "Run document" button. A shiny markdown file will be generated.
 

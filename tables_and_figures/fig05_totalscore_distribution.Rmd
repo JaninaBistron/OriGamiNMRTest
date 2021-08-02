@@ -15,8 +15,6 @@
     <td>**Only Location Tasks**</td>
     <td>
 ```{r test score distribution{{z}}-1, echo=FALSE}
-library("DescTools")
-
 min = min(totalscore$sumloc_r)
 max = max(totalscore$sumloc_r)
 mode = Mode(totalscore$sumloc_r)[1]
