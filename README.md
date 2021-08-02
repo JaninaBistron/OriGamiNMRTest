@@ -56,7 +56,7 @@ for a given range of thresholds (for details run `Run.Rmd`).
 
 If you are interested in developing OriGami NMR Test for your location or your target group of interest, you have to proceed as follows:
 
-1. Install OriGami on your mobile devices (see https://origami.ifgi.de for further instructions). Information on the devices can be found in `Run.Rm`, chapter 2. 
+1. Install OriGami on your mobile devices (see https://origami.ifgi.de for further instructions). Information on the devices can be found in `Run.Rmd`, chapter 2. 
 
 2. Create an OriGami account and contact us for getting the "scientist" user role. This role gives you access to your data.
 
