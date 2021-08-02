@@ -2,8 +2,7 @@
 
 On the basis of our location-based game [OriGami](https://app.origami.ifgi.de) we created a test 
 instrument for measuring navigational map reading (NMR) competencies: **OriGami NMR Test**. The main aim of the 
-following R project is to show that our test instrument is objective, reliable, and valid. Moreover, we want to 
-give the user the possibility to conduct OriGami NMR Test also for his or her preferred location.
+following R project is to give the reader details on our OriGami NMR Score calculation and the test evaluation. Moreover, we want to provide information and scripts for conducting OriGami NMR Test for another location or age group.
 
 For more information on **OriGami** visit the [Website](https://origami.ifgi.de).
 
