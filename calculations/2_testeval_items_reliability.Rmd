@@ -1,18 +1,18 @@
 OriGami NMR Test for the location `r location` is evaluated by executing an item analysis as well as by determining the split-half-reliability and validity of the test.
 
-#### Item Analysis and Internal Consistency
+#### Item Analysis and Cronbach's Alpha
 
-For analyzing the items, we estimate the _internal consistency_ for each task type as well as the _item-total correlation_ for each task. Tasks with an item-total correlation less than 0.3 are dropped ("dropped tasks"). Moreover, the internal consistency is estimated again by _excluding_ the dropped tasks.
+For analyzing the items, we estimate _Cronbach's Alpha_ for each task type as well as the _item-total correlation_ for each task. Tasks with an item-total correlation less than 0.3 are dropped ("dropped tasks"). Moreover, the Cronbach's Aplha is estimated again by _excluding_ the dropped tasks.
 
-```{r calculate internal consistency and item correlation{{z}}, echo=FALSE, warning=FALSE, message=FALSE, results=FALSE}
-source("calculations/2_testeval_items_reliability/01_internalconsistency.R", local = knitr::knit_global())
+```{r calculate cronbachs alpha and item correlation{{z}}, echo=FALSE, warning=FALSE, message=FALSE, results=FALSE}
+source("calculations/2_testeval_items_reliability/01_cronbachsalpha_itemtotal.R", local = knitr::knit_global())
 ```
 
 ```{r tab13{{z}}, echo = FALSE}
-src <- lapply(z, function(z) knitr::knit_expand(file = "tables_and_figures/tab13_internalconsistency.Rmd"))
+src <- lapply(z, function(z) knitr::knit_expand(file = "tables_and_figures/tab13_cronbachsalpha_itemtotal.Rmd"))
 ```
 `r knitr::knit(text = unlist(src))`
-_Tab. `r 13 - tabmin` - `r location`: Internal Consistency (Cronbach's Alpha) and Item-Total Correlations._
+_Tab. `r 13 - tabmin` - `r location`: Cronbach's Alpha and Item-Total Correlations._
 
 The _difficulty of a task_ is calculated by dividing the total scores of all participants per task by the maximum score for these tasks. For each task type, pairs of tasks (task twins) with similar task difficulties are determined. One task of each pair belongs to test half 1, the other task to test half 2. In the following table the task-halves and task difficulties are visualized.
 

@@ -34,7 +34,7 @@ source("calculations/1_data_and_scoring/08_score_lnv.R", encoding="utf-8", local
 source("calculations/1_data_and_scoring/09_score_dirtasks.R", encoding="utf-8", local = TRUE)
 source("calculations/1_data_and_scoring/10_score_dm.R", encoding="utf-8", local = TRUE)
 source("calculations/1_data_and_scoring/11_score_da.R", encoding="utf-8", local = TRUE)
-source("calculations/2_testeval_items_reliability/01_internalconsistency.R", encoding="utf-8", local = TRUE)
+source("calculations/2_testeval_items_reliability/01_cronbachsalpha_itemtotal.R", encoding="utf-8", local = TRUE)
 source("calculations/2_testeval_items_reliability/02_taskdifficulty.R", encoding="utf-8", local = TRUE)
 source("calculations/2_testeval_items_reliability/03_splithalfreliability.R", encoding="utf-8", local = TRUE)
 source("calculations/3_testeval_scoredistrib_validity/01_totalscores.R", encoding="utf-8", local = TRUE)
