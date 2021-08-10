@@ -1,4 +1,4 @@
-# Calculate Internal Consistency and Item Correlation of each Task
+# Calculate Cronbach's Alpha and Item-Total Correlation of each Task
 
 # Create Data.Frames with Scores of different combinations of tasks ----------------------------------------------------
   
@@ -17,11 +17,11 @@
 # Create empty list for dropped tasks  ---------------------------------------------------------------------------------
     all_dropped_tasks <- c()
     
-# Calculate Internal Consistency and drop Tasks  -----------------------------------------------------------------------
+# Calculate Cronbach's Alpha and drop Tasks  -----------------------------------------------------------------------
     
   # Define functions ---
     
-      # Determine tasks to drop (with item correlation less than 0.3)
+      # Determine tasks to drop (with item-total correlation less than 0.3)
         determine_dropped_tasks <- function(scoring){
           # find names of tasks that need to be dropped
           dropped_tasks2 <- c()
@@ -51,12 +51,12 @@
       itemanalysis <- psych::alpha(locationtasks_cat_r, check.keys=FALSE, warnings=FALSE)
     # cronbach's alpha
       alpha_locr <- itemanalysis$total$raw_alpha
-    # item correlation (Trennschärfe)
+    # item-total correlation (Trennschärfe)
       item_corr <- itemanalysis$item.stats$r.cor
       item_corr_locr <- item_corr
     # drop tasks
       dropped_tasks_locr <- determine_dropped_tasks(locationtasks_cat_r)
-    # drop tasks by item correlation value
+    # drop tasks by item-total correlation value
       locationtasks_cat_r_drop <- locationtasks_cat_r
       for (a in 1:12){
         if(item_corr[[a]] <= 0.3){
@@ -72,12 +72,12 @@
     itemanalysis <- psych::alpha(locationtasks_cat_c, check.keys=FALSE, warnings=FALSE)
     # cronbach's alpha
       alpha_locc <- itemanalysis$total$raw_alpha
-    # item correlation (Trennschärfe)
+    # item-total correlation (Trennschärfe)
       item_corr <- itemanalysis$item.stats$r.cor
       item_corr_locc <- item_corr
     # drop tasks
       dropped_tasks_locc <- determine_dropped_tasks(locationtasks_cat_c)
-    # drop tasks by item correlation value
+    # drop tasks by item-total correlation value
       locationtasks_cat_c_drop <- locationtasks_cat_c
       for (a in 1:12){
         if(item_corr[[a]] <= 0.3){
@@ -103,12 +103,12 @@
     itemanalysis <- psych::alpha(vdirectiontasks_cat_r, check.keys=FALSE, warnings=FALSE)
     # cronbach's alpha
       alpha_dir <- itemanalysis$total$raw_alpha
-    # item correlation (Trennschärfe)
+    # item-total correlation (Trennschärfe)
       item_corr <- itemanalysis$item.stats$r.cor
       item_corr_dir <- item_corr
     # drop tasks
       dropped_tasks_dir <- determine_dropped_tasks(vdirectiontasks_cat_r)
-    # drop tasks by item correlation value
+    # drop tasks by item-total correlation value
       vdirectiontasks_cat_r_drop <- vdirectiontasks_cat_r
       for (a in 1:8){
         if(item_corr[[a]] <= 0.3){
@@ -124,12 +124,12 @@
     itemanalysis <- psych::alpha(vdirectiontasks_cat_c, check.keys=FALSE, warnings=FALSE)
     # cronbach's alpha
       alpha_dirc <- itemanalysis$total$raw_alpha
-    # item correlation (Trennschärfe)
+    # item-total correlation (Trennschärfe)
       item_corr <- itemanalysis$item.stats$r.cor
       item_corr_dirc <- item_corr
     # drop tasks
       dropped_tasks_dirc <- determine_dropped_tasks(vdirectiontasks_cat_c)
-    # drop tasks by item correlation value
+    # drop tasks by item-total correlation value
       vdirectiontasks_cat_c_drop <- vdirectiontasks_cat_c
       for (a in 1:4){
         if(item_corr[[a]] <= 0.3){

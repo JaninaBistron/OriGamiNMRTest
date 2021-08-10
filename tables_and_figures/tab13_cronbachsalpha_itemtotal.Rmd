@@ -1,4 +1,4 @@
-<!-- Tab. 13: Internal Consistency and Items Correlations-->
+<!-- Tab. 13: Cronbach's Alpha and Item-Total Correlations-->
 
 <table style="width: 100%; border-collapse: collapse; border: 1px solid lightgrey; text-align: center;">
   <colgroup>
