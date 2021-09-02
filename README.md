@@ -2,7 +2,7 @@
 
 # OriGami NMR Test
 
-## Open Reproducible data of the OriGami NMR Test for Navigational Map Reading Competencies
+## Open Reproducible Data of the OriGami NMR Test for Navigational Map Reading Competencies
 
 On the basis of our location-based game [OriGami](https://app.origami.ifgi.de) we created a test 
 instrument for measuring navigational map reading (NMR) competencies: **OriGami NMR Test**. The main aim of the 

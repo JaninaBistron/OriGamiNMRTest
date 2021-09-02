@@ -1,8 +1,8 @@
 ---
 title: "OriGami Navigational Map Reading Test"
-subtitle: "Investigating Navigational Map Reading Competencies in Children"
+subtitle: "Open Reproducible Data, Score Calculation, and Test Evaluation"
 author: "J. Bistron, A. Schwering"
-date: "6/3/2021"
+date: "9/2/2021"
 runtime: shiny
 output:
   html_document:
