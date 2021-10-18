@@ -60,7 +60,7 @@ The aim of the script is to enhance the related [publication](https://osf.io/bju
 
 # 2 OriGami NMR Test
 
-OriGami NMR Test is designed for measuring navigational map reading (NMR) competencies and based on our location-based game OriGami (details on the implementation [on Github](https://github.com/origami-team/origami)). For evaluating OriGami NMR Test, we implemented it for two locations within the OriGami application. In the following, we describe the overall design of the test. 
+OriGami NMR Test is designed for measuring navigational map reading (NMR) competencies and based on our location-based game OriGami (implementation details [on Github](https://github.com/origami-team/origami)). For evaluating OriGami NMR Test, we implemented it for two locations within the OriGami application. In the following, we describe the overall design of the test. 
 
 ## 2.1 Test Design
 
@@ -74,7 +74,7 @@ The test requires a detailed mapping of paths and objects of the location which 
 
 ### 2.1.2 Tasks
 
-OriGami NMR Test consists of four NMR task types which are ordered in two groups: Location Tasks and Direction Tasks. _Location Tasks_ (fig. 1 left) include tasks that asks to mark the own location on the map (self-location tasks) or to change the location according to the map (navigation-to-a-flag tasks). _Direction Tasks_ (fig. 1 right) cover tasks that require to mark the current view direction on the map (mark-view-direction tasks) or to change it according to the map (adopt-view-direction tasks). Between these tasks so-called _Transition Tasks_ allow a coherent flow of the test (fig. 1 grey boxes).
+OriGami NMR Test consists of four NMR task types which are ordered in two groups: Location Tasks and Direction Tasks. _Location Tasks_ (fig. 1 left) include tasks that ask to mark the own location on the map (self-location tasks) or to change the location according to the map (navigation-to-a-flag tasks). _Direction Tasks_ (fig. 1 right) cover tasks that require to mark the current view direction on the map (mark-view-direction tasks) or to change it according to the map (adopt-view-direction tasks). Between these tasks so-called _Transition Tasks_ allow a coherent flow of the test (fig. 1 grey boxes).
 
 ![_Fig. 1: Task Types in OriGami NMR Test._](tables_and_figures/fig01_tasktypes_origami.png){width=80%}
 
@@ -99,7 +99,7 @@ OriGami NMR Test was evaluated for the age group 6 - 10 (see chapter 3). However
 
 OriGami NMR Test is a digital game in our app OriGami. We implemented it for two different locations, but it is also possible to create the test for further locations.
 
-The app OriGami can be installed on different mobile devices (iOS or Android mobile phones and tablets). However, OriGami NMR Test is designed for tablets allowing the user to see a large map section with a lot of details at once. We use the iPad (7th generation) with a 10.2" display in the Wi-Fi cellular version for having continuous mobile Internet connection during the test. A SIM card is needed to assure a accurate GPS localization. 
+The app OriGami can be installed on different mobile devices (iOS or Android mobile phones and tablets). However, OriGami NMR Test is designed for tablets allowing the user to see a large map section with a lot of details at once. We use the iPad (7th generation) with a 10.2" display in the Wi-Fi cellular version for having continuous mobile Internet connection during the test. A SIM card is needed to assure an accurate GPS localization. 
 
 For further information on OriGami (on how to install and use it), see the [OriGami Website](https://origami.ifgi.de).
 
@@ -202,7 +202,7 @@ _Tab. 5: Task performance data - accuracy and process data derived from the raw 
 
 ### 2.2.4 Test Scoring
 
-For evaluating the user's NMR competencies, we determine a _NMR competency test score_ based on the accuracy and process data. For the accuracy (representing the "correctness" of a solution) we score 1 point for a correct solution and 0 points for a wrong solution. In the case of a correct solution, we also take the process data into account (potentially representing the "confidence" in solving the task): We score 1 point for a "confident" and 0 points for a "inconfident" solution. The performance of a user in a certain task is therefore scored with: 0 points for a wrong solution, 1 points for a right but inconfident solution, and 2 points for a right and confident solution. In order to define a "right" or "wrong" as well as a "confident" or "inconfident" solution, we made some assumptions which are explained in detail in the related [publication](https://osf.io/bjus2/).
+For evaluating the user's NMR competencies, we determine an _NMR competency test score_ based on the accuracy and process data. For the accuracy (representing the "correctness" of a solution) we score 1 point for a correct and 0 points for a wrong solution. In the case of a correct solution, we also take the process data into account (potentially representing the "confidence" in solving the task): We score 1 point for a "confident" and 0 points for an "unconfident" solution. The performance of a user in a certain task is therefore scored with: 0 points for a wrong solution, 1 point for a right but unconfident solution, and 2 points for a right and confident solution. In order to define a "right" or "wrong" as well as a "confident" or "unconfident" solution, we made some assumptions which are explained in detail in the related [publication](https://osf.io/bjus2/).
 
 Knowing that the evaluation of OriGami NMR Test is affected by the definition of the thresholds, we added a manual _sensitivity analysis_ at the end of this script allowing the reader to manipulate the thresholds and investigating its effects on the test evaluation. Additionally, with the file `SensAnalysis_ParameterOpt.R` in this R project, the reader has access to the calculations on all possible evaluation results which can be achieved in the sensitivity analysis for all combinations of the thresholds in a certain range. Moreover, if interested in conducting the test at another location, the reader is free to change the thresholds according to the characteristics of the chosen location in `calculation/1_data_and_scoring.Rmd` (line: 94 - 103).
 
@@ -214,7 +214,7 @@ The test evaluation gives the reader a first idea of the expressive power of Ori
 
 In the following, we present the results for both locations separately - for the whole test and for Location Tasks individually as well as _with_ or _without_ process data included. At the end of the script, we offer a sensitivity analysis on the thresholds for scoring the accuracy and process data regarding their effects on the evaluation results.
 
-Details on the description and interpretation of the results are presented in the corresponding [publication](https://osf.io/bjus2/). In this script the focus is on details on the data, the score calculations, and the test evaluation calculations.
+Details on the description and interpretation of the results are presented in the corresponding [publication](https://osf.io/bjus2/). In this script the focus is on data details, the score calculations, and the test evaluation calculations.
 
 ## 3.1 Study and Data Collection
 

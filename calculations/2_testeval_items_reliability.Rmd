@@ -2,7 +2,7 @@ OriGami NMR Test for the location `r location` is evaluated by executing an item
 
 #### Item Analysis and Cronbach's Alpha
 
-For analyzing the items, we estimate _Cronbach's Alpha_ for each task type as well as the _item-total correlation_ for each task. Tasks with an item-total correlation less than 0.3 are dropped ("dropped tasks"). Moreover, the Cronbach's Aplha is estimated again by _excluding_ the dropped tasks.
+For analyzing the items, we estimate _Cronbach's Alpha_ for each task type as well as the _item-total correlation_ for each task. Tasks with an item-total correlation less than 0.3 are dropped ("dropped tasks"). Moreover, the Cronbach's Alpha is estimated again by _excluding_ the dropped tasks.
 
 ```{r calculate cronbachs alpha and item correlation{{z}}, echo=FALSE, warning=FALSE, message=FALSE, results=FALSE}
 source("calculations/2_testeval_items_reliability/01_cronbachsalpha_itemtotal.R", local = knitr::knit_global())
@@ -14,7 +14,7 @@ src <- lapply(z, function(z) knitr::knit_expand(file = "tables_and_figures/tab13
 `r knitr::knit(text = unlist(src))`
 _Tab. `r 13 - tabmin` - `r location`: Cronbach's Alpha and Item-Total Correlations._
 
-The _difficulty of a task_ is calculated by dividing the total scores of all participants per task by the maximum score for these tasks. For each task type, pairs of tasks (task twins) with similar task difficulties are determined. One task of each pair belongs to test half 1, the other task to test half 2. In the following table the task-halves and task difficulties are visualized.
+The _difficulty of a task_ is calculated by dividing the total scores of all participants per task by the maximum score for these tasks. For each task type, pairs of tasks (task twins) with similar task difficulties are determined. One task of each pair belongs to test half 1, the other task to test half 2. In the following table the test-halves and task difficulties are visualized.
 
 ```{r calculate task difficulty{{z}}, echo=FALSE}
 source("calculations/2_testeval_items_reliability/02_taskdifficulty.R", local = knitr::knit_global())
@@ -28,7 +28,7 @@ _Tab. `r 14 - tabmin` - `r location`: Determined Task-Twins and Test-Halves via 
 
 #### Split-Half Reliability
 
-On the basis of the task difficulties, test-half scores for each participant are determined. In order to estimate the split-half reliability, the scores of test-half 1 and 2 are correlated. The results are corrected with the Spearman-Brown-Formula. _We assume two parallel test halves._
+On the basis of the task difficulties, test-half scores for each participant are determined. In order to estimate the split-half reliability, the scores of test-half 1 and 2 are correlated. The results are corrected with the Spearman-Brown-Formula. _We assume two parallel test-halves._
 
 ```{r calculate test half scores and split half reliability{{z}}, echo=FALSE}
 source("calculations/2_testeval_items_reliability/03_splithalfreliability.R", local = knitr::knit_global())
