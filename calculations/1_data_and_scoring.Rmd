@@ -3,7 +3,7 @@ location <- logfile$name[[1]]
 participants <- nrow(logfile)
 ```
 
-In the following, the raw data, task performance data, as well as the resulting NMR competency test score for the location _`r location`_ with `r participants` participants is presented.
+In the following, the raw data, task performance data, as well as the resulting NMR competency score for the location _`r location`_ with `r participants` participants is presented.
 
 ```{r collect and calculate waypoint data{{z}}, echo=FALSE}
 source("calculations/1_data_and_scoring/01_calc_waypointdata.R", local = knitr::knit_global())
@@ -91,9 +91,9 @@ src <- lapply(z, function(z) knitr::knit_expand(file = "tables_and_figures/fig04
 `r knitr::knit(text = unlist(src))`
 _Fig. `r 4 - figmin` - `r location`: Density plots for the Direction Task performance of all participants for all tasks of each task type._
 
-#### Test Scoring
+#### NMR Competency Score
 
-We fixed the _thresholds_ (chapter 2.2.4) to the following values resulting to the NMR competency test scoring presented below. The thresholds define the "line" between a correct and incorrect as well as a confident and inconfident solution. The scoring data can be found in the files `scoring_loc.Rda` or `scoring_loc.json` (for Location Tasks) and `scoring_dir.Rda` or `scoring_dir.json` (for Direction Tasks) of the `results` folder.
+We fixed the _thresholds_ (chapter 2.2.4) to the following values resulting to the NMR competency scoring presented below. The thresholds define the "line" between a correct and incorrect as well as a confident and inconfident solution. The scoring data can be found in the files `scoring_loc.Rda` or `scoring_loc.json` (for Location Tasks) and `scoring_dir.Rda` or `scoring_dir.json` (for Direction Tasks) of the `results` folder.
 
 ```{r set thresholds{{z}}, echo=FALSE}
 LOClimit <- 10

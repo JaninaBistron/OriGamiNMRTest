@@ -13,14 +13,14 @@
   </tr>
   <tr style="border: 1px solid grey;">
     <td>**Only Location Tasks**</td>
-    <td>`r format(round(rel_Lr,2), nsmall=2)`</td>
-    <td>`r format(round(rel_Lc,2), nsmall=2)`</td>
-    <td>`r format(round(rel_Lc_drop,2), nsmall=2)`</td>
+    <td>`r format(round(rel_Lr,2), nsmall=2)` <br><i>(`r signif(cor_rel_Lr_p,digits=3)`)</i></td>
+    <td>`r format(round(rel_Lc,2), nsmall=2)` <br><i>(`r signif(cor_rel_Lc_p,digits=3)`)</i></td>
+    <td>`r format(round(rel_Lc_drop,2), nsmall=2)` <br><i>(`r signif(cor_rel_Lc_drop_p,digits=3)`)</i></td>
   </tr>
   <tr style="border: 1px solid grey;">
     <td>**All Tasks**</td>
-    <td>`r format(round(rel_Totalr,2), nsmall=2)`</td>
-    <td>`r format(round(rel_Totalc,2), nsmall=2)`</td>
-    <td>`r format(round(rel_Totalc_drop,2), nsmall=2)`</td>
+    <td>`r format(round(rel_Totalr,2), nsmall=2)` <br><i>(`r signif(cor_rel_Totalr_p,digits=3)`)</i></td>
+    <td>`r format(round(rel_Totalc,2), nsmall=2)` <br><i>(`r signif(cor_rel_Totalc_p,digits=3)`)</i></td>
+    <td>`r format(round(rel_Totalc_drop,2), nsmall=2)` <br><i>(`r signif(cor_rel_Totalc_drop_p,digits=3)`)</i></td>
   </tr>
 </table>

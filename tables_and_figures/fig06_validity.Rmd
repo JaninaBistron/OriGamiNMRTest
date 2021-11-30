@@ -20,7 +20,8 @@ set_breaks = function(limits) {
   </tr>
   <tr style="border: 1px solid grey;">
     <td>**Only Location Tasks**</td>
-    <td>`r format(round(cor_valid_loc_r,2), nsmall=2)`
+    <td>`r format(round(cor_valid_loc_r,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_loc_r_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-1, message=FALSE, echo=FALSE}
 ggplot(data = totalscore, aes(x = sumloc_r, y = expertscoring)) +
    geom_count(color='black', ) +
@@ -30,7 +31,8 @@ ggplot(data = totalscore, aes(x = sumloc_r, y = expertscoring)) +
    scale_size_continuous(breaks = set_breaks, range = c(2,3))
 ```
     </td>
-    <td>`r format(round(cor_valid_loc_c,2), nsmall=2)`
+    <td>`r format(round(cor_valid_loc_c,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_loc_c_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-4, message=FALSE, echo=FALSE}
 ggplot(data = totalscore, aes(x = sumloc_c, y = expertscoring)) +
   geom_count(color='black') + 
@@ -40,7 +42,8 @@ ggplot(data = totalscore, aes(x = sumloc_c, y = expertscoring)) +
   scale_size_continuous(breaks = set_breaks, range = c(2,3))
 ```
     </td>
-    <td>`r format(round(cor_valid_loc_c_drop,2), nsmall=2)`
+    <td>`r format(round(cor_valid_loc_c_drop,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_loc_c_drop_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-7, message=FALSE, echo=FALSE}
 ggplot(data = totalscore_drop, aes(x = sumloc_c, y = expertscoring)) +
   geom_count(color='black') + 
@@ -53,7 +56,8 @@ ggplot(data = totalscore_drop, aes(x = sumloc_c, y = expertscoring)) +
   </tr>
   <tr style="border: 1px solid grey;">
     <td>**All Tasks**</td>
-    <td>`r format(round(cor_valid_total_r,2), nsmall=2)`
+    <td>`r format(round(cor_valid_total_r,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_total_r_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-3, message=FALSE, echo=FALSE}
 ggplot(data = totalscore, aes(x = sumtotal_r, y = expertscoring)) +
   geom_count(color='black') + 
@@ -63,7 +67,8 @@ ggplot(data = totalscore, aes(x = sumtotal_r, y = expertscoring)) +
   scale_size_continuous(breaks = set_breaks, range = c(2,3))
 ```
     </td>
-    <td>`r format(round(cor_valid_total_c,2), nsmall=2)`
+    <td>`r format(round(cor_valid_total_c,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_total_c_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-6, message=FALSE, echo=FALSE}
 ggplot(data = totalscore, aes(x = sumtotal_c, y = expertscoring)) +
   geom_count(color='black') + 
@@ -73,7 +78,8 @@ ggplot(data = totalscore, aes(x = sumtotal_c, y = expertscoring)) +
   scale_size_continuous(breaks = set_breaks, range = c(2,3))
 ```
     </td>
-    <td>`r format(round(cor_valid_total_c_drop,2), nsmall=2)`
+    <td>`r format(round(cor_valid_total_c_drop,2), nsmall=2)`<br>
+    <i>`r signif(cor_valid_total_c_drop_p,digits=3)`</i>
 ```{r plot validation correlation{{z}}-9, message=FALSE, echo=FALSE}
 ggplot(data = totalscore_drop, aes(x = sumtotal_c, y = expertscoring)) +
   geom_count(color='black') + 

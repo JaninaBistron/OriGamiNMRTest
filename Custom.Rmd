@@ -1,5 +1,5 @@
 ---
-title: "OriGami NMR Test"
+title: "GeoGami NMR Assessment"
 subtitle: "Custom Evaluation Script"
 author: "J. Bistron, A. Schwering"
 date: "4/9/2021"
@@ -61,7 +61,7 @@ src <- lapply(z, function(z) knitr::knit_expand(file = "calculations/1_data_and_
 ```
 `r knitr::knit(text = unlist(src))`
 
-## 2 Test Evaluation
+## 2 Assessment Evaluation
 
 ```{r, echo = FALSE}
 src <- lapply(z, function(z) knitr::knit_expand(file = "calculations/2_testeval_items_reliability.Rmd"))

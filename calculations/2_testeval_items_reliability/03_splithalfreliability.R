@@ -135,14 +135,23 @@
   testhalfscores_droppedtasks$TotalcT1 <- testhalfscores_droppedtasks$LcT1 + testhalfscores_droppedtasks$DTc2
   testhalfscores_droppedtasks$TotalcT2 <- testhalfscores_droppedtasks$LcT2 + testhalfscores_droppedtasks$DTc1
   
-  # correlation coefficients for groups of tasks
-  cor_rel_Lr <- cor(testhalfscores$LrT1, testhalfscores$LrT2, method="spearman")
-  cor_rel_Lc <- cor(testhalfscores$LcT1, testhalfscores$LcT2, method="spearman")
-  cor_rel_Totalr <- cor(testhalfscores$TotalrT1, testhalfscores$TotalrT2, method="spearman")
-  cor_rel_Totalc <- cor(testhalfscores$TotalcT1, testhalfscores$TotalcT2, method="spearman")
-  # correlation coefficients for groups of tasks after dropping tasks
-  cor_rel_Lc_drop <- cor(testhalfscores_droppedtasks$LcT1, testhalfscores_droppedtasks$LcT2, method="spearman")
-  cor_rel_Totalc_drop <- cor(testhalfscores_droppedtasks$TotalcT1, testhalfscores_droppedtasks$TotalcT2, method="spearman")
+  # correlation coefficients for groups of tasks (spearman's rho)
+  cor_rel_Lr <- suppressWarnings(cor.test(testhalfscores$LrT1, testhalfscores$LrT2, method="spearman")$estimate[[1]])
+  cor_rel_Lc <- suppressWarnings(cor.test(testhalfscores$LcT1, testhalfscores$LcT2, method="spearman")$estimate[[1]])
+  cor_rel_Totalr <- suppressWarnings(cor.test(testhalfscores$TotalrT1, testhalfscores$TotalrT2, method="spearman")$estimate[[1]])
+  cor_rel_Totalc <- suppressWarnings(cor.test(testhalfscores$TotalcT1, testhalfscores$TotalcT2, method="spearman")$estimate[[1]])
+  # correlation coefficients for groups of tasks after dropping tasks (spearman's rho)
+  cor_rel_Lc_drop <- suppressWarnings(cor.test(testhalfscores_droppedtasks$LcT1, testhalfscores_droppedtasks$LcT2, method="spearman")$estimate[[1]])
+  cor_rel_Totalc_drop <- suppressWarnings(cor.test(testhalfscores_droppedtasks$TotalcT1, testhalfscores_droppedtasks$TotalcT2, method="spearman")$estimate[[1]])
+  
+  # p-values for spearman's rho
+  cor_rel_Lr_p <- suppressWarnings(cor.test(testhalfscores$LrT1, testhalfscores$LrT2, method="spearman")$p.value)
+  cor_rel_Lc_p <- suppressWarnings(cor.test(testhalfscores$LcT1, testhalfscores$LcT2, method="spearman")$p.value)
+  cor_rel_Totalr_p <- suppressWarnings(cor.test(testhalfscores$TotalrT1, testhalfscores$TotalrT2, method="spearman")$p.value)
+  cor_rel_Totalc_p <- suppressWarnings(cor.test(testhalfscores$TotalcT1, testhalfscores$TotalcT2, method="spearman")$p.value)
+  # p-values for spearman's rho - after dropping tasks
+  cor_rel_Lc_drop_p <- suppressWarnings(cor.test(testhalfscores_droppedtasks$LcT1, testhalfscores_droppedtasks$LcT2, method="spearman")$p.value)
+  cor_rel_Totalc_drop_p <- suppressWarnings(cor.test(testhalfscores_droppedtasks$TotalcT1, testhalfscores_droppedtasks$TotalcT2, method="spearman")$p.value)
   
   # Spli-half reliability - Spearman Brown Formula
   rel_Lr <- 2*cor_rel_Lr/(1+cor_rel_Lr)

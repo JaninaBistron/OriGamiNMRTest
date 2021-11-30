@@ -1,6 +1,6 @@
-#### Total Score Distribution
+#### Score Distribution
 
-In the following, the distribution of the OriGami NMR Test Score for `r location` is presented.
+In the following, the distribution of the NMR competency score for `r location` is presented.
 
 ```{r calculate totalscores{{z}}, echo=FALSE}
 source("calculations/3_testeval_scoredistrib_validity/01_totalscores.R", local = knitr::knit_global())
@@ -16,7 +16,7 @@ The total scoring data can be found in the files `scoring.Rda` or `scoring.json`
 
 #### Validity
 
-The test validity is determined by correlating the OriGami NMR Test scoring with the expert judgment, which is visualized in the following.
+The test validity is determined by correlating the score with the expert judgment, which is visualized in the following.
 
 ```{r calculate validity{{z}}, echo=FALSE}
 source("calculations/3_testeval_scoredistrib_validity/02_validity.R", local = knitr::knit_global())
@@ -26,7 +26,7 @@ source("calculations/3_testeval_scoredistrib_validity/02_validity.R", local = kn
 src <- lapply(z, function(z) knitr::knit_expand(file = "tables_and_figures/fig06_validity.Rmd"))
 ```
 `r knitr::knit(text = unlist(src))`
-_Fig. `r 6 - figmin` - `r location`: Validity Coefficients._
+_Fig. `r 6 - figmin` - `r location`: Validity Coefficients with p-values in brackets._
 
 ```{r store data files 2{{z}}, echo = FALSE}
 
